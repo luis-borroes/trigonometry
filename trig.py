@@ -36,11 +36,8 @@ class Trig:
 		self.master = master
 		self.canvas = tk.Canvas(self.master, width=WIDTH, height=HEIGHT)
 		self.canvas.pack()
-		self.canvas.bind("<Button-1>", self.add_point)
 		self.canvas.bind("<Motion>", self.move_mouse)
 
-
-		self.points = []
 		self.origin = Point(ORIGIN_X, ORIGIN_Y)
 		self.mouse = Point(ORIGIN_X, ORIGIN_Y)
 		self.angle = 0
@@ -48,14 +45,6 @@ class Trig:
 
 		self.draw()
 	
-
-
-	def add_point(self, event):
-		x, y = event.x, event.y
-		self.points.append(Point(x, y))
-
-		self.draw()
-
 	
 
 	def move_mouse(self, event):
@@ -262,7 +251,7 @@ class Trig:
 
 def main():
 	root = tk.Tk()
-	root.title('Triângulo & Trigonometria')
+	root.title('Triangles & Trigonometry')
 	app = Trig(root)
 	root.mainloop()
 
